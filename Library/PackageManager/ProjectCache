@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638672022387275993
-    m_Hash: 3855569338
+      ticks: 638673081387160338
+    m_Hash: 2498620894
   m_LockFileStatus:
     m_FilePath: F:/Unity/Shift/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638672022387946963
-    m_Hash: 53163367
+      ticks: 638673081387170344
+    m_Hash: 2968423
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:

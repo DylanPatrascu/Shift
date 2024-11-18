@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "F:\\Unity\\Shift\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|f:\\unity\\shift\\assets\\scripts\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|F:\\Unity\\Shift\\assets\\scripts\\uicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\uicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|f:\\unity\\shift\\assets\\scripts\\carcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\carcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|F:\\Unity\\Shift\\assets\\scripts\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|F:\\Unity\\Shift\\assets\\template\\scripts\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\template\\scripts\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|F:\\Unity\\Shift\\assets\\scripts\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,15 +35,64 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CarController.cs",
-              "DocumentMoniker": "F:\\Unity\\Shift\\Assets\\Scripts\\CarController.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\CarController.cs",
-              "ToolTip": "F:\\Unity\\Shift\\Assets\\Scripts\\CarController.cs",
-              "RelativeToolTip": "Assets\\Scripts\\CarController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Title": "UIController.cs",
+              "DocumentMoniker": "F:\\Unity\\Shift\\Assets\\Scripts\\UIController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIController.cs",
+              "ToolTip": "F:\\Unity\\Shift\\Assets\\Scripts\\UIController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIController.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAQwDQAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T21:47:04.154Z",
+              "WhenOpened": "2024-11-16T18:23:01.738Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CameraController.cs",
+              "DocumentMoniker": "F:\\Unity\\Shift\\Assets\\Scripts\\CameraController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CameraController.cs",
+              "ToolTip": "F:\\Unity\\Shift\\Assets\\Scripts\\CameraController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CameraController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T07:10:11.188Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CarControl.cs",
+              "DocumentMoniker": "F:\\Unity\\Shift\\Assets\\Scripts\\CarControl.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CarControl.cs",
+              "ToolTip": "F:\\Unity\\Shift\\Assets\\Scripts\\CarControl.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CarControl.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAkwCgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T02:38:39.905Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InputManager.cs",
+              "DocumentMoniker": "F:\\Unity\\Shift\\Assets\\Scripts\\InputManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\InputManager.cs",
+              "ToolTip": "F:\\Unity\\Shift\\Assets\\Scripts\\InputManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\InputManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T04:21:29.342Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "controller.cs",
+              "DocumentMoniker": "F:\\Unity\\Shift\\Assets\\template\\scripts\\controller.cs",
+              "RelativeDocumentMoniker": "Assets\\template\\scripts\\controller.cs",
+              "ToolTip": "F:\\Unity\\Shift\\Assets\\template\\scripts\\controller.cs",
+              "RelativeToolTip": "Assets\\template\\scripts\\controller.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAAwIEAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T06:25:43.485Z"
             }
           ]
         }
