@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "F:\\Unity\\Shift\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|F:\\Unity\\Shift\\assets\\scripts\\uicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\uicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|F:\\Unity\\Shift\\assets\\scripts\\musiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\musiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|f:\\unity\\shift\\assets\\scripts\\carcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|F:\\Unity\\Shift\\assets\\scripts\\carcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\carcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -15,12 +15,20 @@
       "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|F:\\Unity\\Shift\\assets\\template\\scripts\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\template\\scripts\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|f:\\unity\\shift\\assets\\scripts\\songso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\songso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|F:\\Unity\\Shift\\assets\\scripts\\uicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\uicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|F:\\Unity\\Shift\\assets\\scripts\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\Unity\\Shift\\Assets\\template\\scripts\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\template\\scripts\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,17 +38,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SongSO.cs",
+              "DocumentMoniker": "F:\\Unity\\Shift\\Assets\\Scripts\\SongSO.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SongSO.cs",
+              "ToolTip": "F:\\Unity\\Shift\\Assets\\Scripts\\SongSO.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SongSO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T21:10:34.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MusicController.cs",
+              "DocumentMoniker": "F:\\Unity\\Shift\\Assets\\Scripts\\MusicController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MusicController.cs",
+              "ToolTip": "F:\\Unity\\Shift\\Assets\\Scripts\\MusicController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MusicController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAwwDEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T21:08:34.61Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "UIController.cs",
               "DocumentMoniker": "F:\\Unity\\Shift\\Assets\\Scripts\\UIController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UIController.cs",
               "ToolTip": "F:\\Unity\\Shift\\Assets\\Scripts\\UIController.cs",
               "RelativeToolTip": "Assets\\Scripts\\UIController.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAQwDQAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowAcAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-16T18:23:01.738Z",
               "EditorCaption": ""
@@ -55,7 +89,8 @@
               "RelativeToolTip": "Assets\\Scripts\\CameraController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T07:10:11.188Z"
+              "WhenOpened": "2024-11-16T07:10:11.188Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -65,14 +100,14 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\CarControl.cs",
               "ToolTip": "F:\\Unity\\Shift\\Assets\\Scripts\\CarControl.cs",
               "RelativeToolTip": "Assets\\Scripts\\CarControl.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAkwCgAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAwEEAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-16T02:38:39.905Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "InputManager.cs",
               "DocumentMoniker": "F:\\Unity\\Shift\\Assets\\Scripts\\InputManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\InputManager.cs",
@@ -84,7 +119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "controller.cs",
               "DocumentMoniker": "F:\\Unity\\Shift\\Assets\\template\\scripts\\controller.cs",
               "RelativeDocumentMoniker": "Assets\\template\\scripts\\controller.cs",

@@ -65,7 +65,7 @@ public class CarControl : MonoBehaviour
         ApplyDownForce();
         //GetFriction();
         CalculateEnginePower();
-        Debug.Log("WheelRPM: " + wheelsRPM + "||| Engine RPM:" + engineRPM + "||||" + verticalInput);
+        //Debug.Log("WheelRPM: " + wheelsRPM + "||| Engine RPM:" + engineRPM + "||||" + verticalInput);
     }
 
     private void Update()

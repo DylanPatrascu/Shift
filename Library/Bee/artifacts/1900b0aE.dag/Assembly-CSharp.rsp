@@ -359,6 +359,8 @@
 "Assets/Scripts/CarControl.cs"
 "Assets/Scripts/CarController.cs"
 "Assets/Scripts/InputManager.cs"
+"Assets/Scripts/MusicController.cs"
+"Assets/Scripts/SongSO.cs"
 "Assets/Scripts/UIController.cs"
 -langversion:9.0
 /deterministic
