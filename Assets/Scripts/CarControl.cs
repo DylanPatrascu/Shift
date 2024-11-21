@@ -29,8 +29,6 @@ public class CarControl : MonoBehaviour
 
     public float downForceValue = 50f;
 
-    public float[] slip = new float[4];
-
     private float verticalInput;
     private float horizontalInput;
     private bool handbrakeInput;
@@ -51,6 +49,11 @@ public class CarControl : MonoBehaviour
 
     [SerializeField] private DriveType driveMode;
 
+    private WheelFrictionCurve forwardFriction;
+    private WheelFrictionCurve sidewaysFriction;
+    public float handBrakeFrictionMultiplier = 1.7f;
+    public float handBrakeFriction = 0f;
+
     private void Start()
     {
         GetObjects();
@@ -63,9 +66,9 @@ public class CarControl : MonoBehaviour
         MoveVehicle();
         SteerVehicle();
         ApplyDownForce();
-        //GetFriction();
         CalculateEnginePower();
-        //Debug.Log("WheelRPM: " + wheelsRPM + "||| Engine RPM:" + engineRPM + "||||" + verticalInput);
+        AdjustTraction();
+        Debug.Log("WheelRPM: " + wheelsRPM + "||| Engine RPM:" + engineRPM + "|||| Speed:" + speedKmh);
     }
 
     private void Update()
@@ -79,6 +82,7 @@ public class CarControl : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
         handbrakeInput = (Input.GetAxis("Jump") != 0);
+
         if (Input.GetKey(KeyCode.LeftControl))
         {
             boostInput = true;
@@ -123,6 +127,14 @@ public class CarControl : MonoBehaviour
         // Update the wheels' RPM
         WheelRPM();
 
+        if (verticalInput != 0)
+        {
+            carRB.drag = 0.005f;
+        }
+        if (verticalInput == 0)
+        {
+            carRB.drag = 0.1f;
+        }
         // Evaluate engine power from the curve using engine RPM
         float rawEnginePower = enginePower.Evaluate(engineRPM);
 
@@ -134,7 +146,6 @@ public class CarControl : MonoBehaviour
         float targetRPM = 1000 + (Mathf.Abs(wheelsRPM) * gears[currentGear] * MPH_TO_KMH);
         engineRPM = Mathf.SmoothDamp(engineRPM, targetRPM, ref velocity, smoothTime);
     }
-
 
     private void WheelRPM()
     {
@@ -180,14 +191,6 @@ public class CarControl : MonoBehaviour
             {
                 wheels[i].motorTorque = verticalInput * Mathf.Abs(totalPower / 2);
             }
-        }
-        if(handbrakeInput)
-        {
-            wheels[2].brakeTorque = wheels[3].brakeTorque = brakeTorque;
-        } 
-        else
-        {
-            wheels[2].brakeTorque = wheels[3].brakeTorque = 0;
         }
 
         if(boostInput)
@@ -237,15 +240,66 @@ public class CarControl : MonoBehaviour
         carRB.AddForce(-transform.up * downForceValue * carRB.velocity.magnitude);
     }
 
-    private void GetFriction()
+
+    private float driftFactor;
+    private void AdjustTraction()
     {
-        for (int i = 0; i < wheels.Length; i++)
+        float driftSmoothFactor = 0.7f * Time.deltaTime;
+
+        if (handbrakeInput)
+        {
+            sidewaysFriction = wheels[0].sidewaysFriction;
+            forwardFriction = wheels[0].forwardFriction;
+
+            float velocity = 0;
+            forwardFriction.extremumValue = forwardFriction.asymptoteValue = sidewaysFriction.extremumValue = sidewaysFriction.asymptoteValue = Mathf.SmoothDamp(forwardFriction.asymptoteValue, driftFactor * handBrakeFrictionMultiplier, ref velocity, driftSmoothFactor);
+
+            for (int i = 0; i < wheels.Length; i++)
+            {
+                wheels[i].forwardFriction = forwardFriction;
+                wheels[i].sidewaysFriction = sidewaysFriction;
+
+            }
+            sidewaysFriction.extremumValue = sidewaysFriction.asymptoteValue = forwardFriction.extremumValue = forwardFriction.asymptoteValue = 1.1f;
+
+            for (int i = 0; i < 2; i++)
+            {
+                wheels[i].sidewaysFriction = sidewaysFriction;
+                wheels[i].forwardFriction = forwardFriction;
+            }
+            carRB.AddForce(transform.forward * (speedKmh / 400) * 10000);
+        }
+        else
+        {
+            forwardFriction = wheels[0].forwardFriction;
+            sidewaysFriction = wheels[0].sidewaysFriction;
+
+            forwardFriction.extremumValue = forwardFriction.asymptoteValue = sidewaysFriction.extremumValue = sidewaysFriction.asymptoteValue = ((speedKmh * handBrakeFrictionMultiplier) / 300) + 1;
+
+            for (int i = 0; i < wheels.Length; i++)
+            {
+                wheels[i].forwardFriction = forwardFriction;
+                wheels[i].sidewaysFriction = sidewaysFriction;
+
+            }
+        }
+
+        for (int i = 2; i < wheels.Length; i++)
         {
             WheelHit wheelHit;
             wheels[i].GetGroundHit(out wheelHit);
-            slip[i] = wheelHit.forwardSlip;
+            if (wheelHit.sidewaysSlip < 0)
+            {
+                driftFactor = (1 + -horizontalInput) * Mathf.Abs(wheelHit.sidewaysSlip);
+            }
+            if (wheelHit.sidewaysSlip > 0)
+            {
+                driftFactor = (1 + horizontalInput) * Mathf.Abs(wheelHit.sidewaysSlip);
+
+            }
         }
     }
+
 
     private void AnimateWheels()
     {
