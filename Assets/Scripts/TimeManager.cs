@@ -7,6 +7,7 @@ public class TimeManager : MonoBehaviour
     public bool slowmo = false;
 
     public TempScript objectSpeeds;
+    public CarControl player;
 
 
     private void Update()
@@ -18,6 +19,7 @@ public class TimeManager : MonoBehaviour
     {
         slowmo = true;
         objectSpeeds.slowmoTimeScale = 0.5f;
+        player.slowmoTimeScale = 0.75f;
         StartCoroutine(ExitSlowMoAfterDuration());
     }
 
@@ -30,6 +32,8 @@ public class TimeManager : MonoBehaviour
     private void ExitSlowMo()
     {
         objectSpeeds.slowmoTimeScale = 1f;
+        player.slowmoTimeScale = 1f;
+
         slowmo = false;
     }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using JetBrains.Annotations;
 public class UIController : MonoBehaviour
 {
     public CarControl car; // Reference to the car script
@@ -15,6 +16,14 @@ public class UIController : MonoBehaviour
     private float speedStartPosition = 142f; // Speedometer start angle
     private float speedEndPosition = -127f; // Speedometer end angle
 
+    public Image albumCover;
+    public TMP_Text songName;
+    public TMP_Text artistName;
+    public TMP_Text elapsedTime;
+    public TMP_Text songLength;
+    public MusicController musicController;
+
+
 
     // Update is called once per frame
     private void FixedUpdate()
@@ -22,7 +31,8 @@ public class UIController : MonoBehaviour
         kphText.text = car.speedKmh.ToString("0"); // Update speed text
         UpdateSpeedometerNeedle(); // Update speedometer needle
         UpdateTachometerNeedle(); // Update tachometer needle
-        updateGearText();
+        UpdateGearText();
+        UpdateSong();
     }
 
     void Start()
@@ -51,12 +61,29 @@ public class UIController : MonoBehaviour
         float desiredPosition = tachEndPosition - tachStartPosition; // Difference between start and end
         float temp = Mathf.Clamp01(car.engineRPM / car.maxRPM); // Normalize speed between 0 and 1
         float needleRotation = tachStartPosition + temp * desiredPosition;
-
         // Apply the rotation using localRotation to avoid issues with global axes
         TachometerNeedle.transform.localRotation = Quaternion.Euler(0, 0, needleRotation);
     }
-    public void updateGearText()
+    public void UpdateGearText()
     {
         gearText.text = (!car.reverse)? (car.currentGear + 1).ToString() : "R";
+    }
+
+    public void UpdateSong()
+    {
+        albumCover.sprite = musicController.songs[musicController.currentSong].albumCover;
+        songName.text = musicController.songs[musicController.currentSong].songName;
+        artistName.text = musicController.songs[musicController.currentSong].artist;
+        
+        int songLengthMinutes = Mathf.FloorToInt(musicController.songs[musicController.currentSong].songLength / 60F);
+        int songLengthSeconds = Mathf.FloorToInt(musicController.songs[musicController.currentSong].songLength - songLengthMinutes * 60);
+        string songLengthNiceTime = string.Format("{0:0}:{1:00}", songLengthMinutes, songLengthSeconds);
+
+        int elapsedTimeMinutes = Mathf.FloorToInt(musicController.track0Source.time / 60F);
+        int elapsedTimeSeconds = Mathf.FloorToInt(musicController.track0Source.time - elapsedTimeMinutes * 60);
+        string elapsedTimeNiceTime = string.Format("{0:0}:{1:00}", elapsedTimeMinutes, elapsedTimeSeconds);
+
+        songLength.text = songLengthNiceTime;
+        elapsedTime.text = elapsedTimeNiceTime;
     }
 }

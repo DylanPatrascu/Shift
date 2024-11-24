@@ -53,6 +53,10 @@ public class CarControl : MonoBehaviour
     private WheelFrictionCurve sidewaysFriction;
     public float handBrakeFrictionMultiplier = 1.7f;
     public float handBrakeFriction = 0f;
+    public float brakePower = 0;
+    public float slowmoTimeScale = 1f;
+    public float[] maxSpeeds = { 57.14f, 100.00f, 142.86f, 190.71f, 237.86f, 300.00f };
+
 
     private void Start()
     {
@@ -69,6 +73,7 @@ public class CarControl : MonoBehaviour
         CalculateEnginePower();
         AdjustTraction();
         Debug.Log("WheelRPM: " + wheelsRPM + "||| Engine RPM:" + engineRPM + "|||| Speed:" + speedKmh);
+        ClampSpeeds();
     }
 
     private void Update()
@@ -156,9 +161,12 @@ public class CarControl : MonoBehaviour
             sum += wheels[i].rpm;
             r++;
         }
-        wheelsRPM = (r != 0) ? sum / r : 0;
+        if(engineRPM < maxRPM)
+        {
+            wheelsRPM = (r != 0) ? sum / r : 0;
+        }
 
-        if(wheelsRPM < 0 && !reverse)
+        if (wheelsRPM < 0 && !reverse && currentGear == 0)
         {
             reverse = true;
         }
@@ -167,15 +175,36 @@ public class CarControl : MonoBehaviour
             reverse = false;
         }
     }
-    
+
+    private void BrakeVehicle()
+    {
+
+        if (verticalInput < 0)
+        {
+            brakePower = (speedKmh >= 10) ? 500 : 0;
+        }
+        else if (verticalInput == 0 && (speedKmh <= 10 || speedKmh >= -10))
+        {
+            brakePower = 10;
+        }
+        else
+        {
+            brakePower = 0;
+        }
+
+
+    }
+
     private void MoveVehicle()
     {
+        BrakeVehicle();
 
         if (driveMode == DriveType.allWheelDrive)
         {
             for (int i = 0; i < wheels.Length; i++)
             {
                 wheels[i].motorTorque = verticalInput * Mathf.Abs(totalPower / 4);
+                wheels[i].brakeTorque = brakePower;
             }
         }
         else if (driveMode == DriveType.rearWheelDrive)
@@ -184,12 +213,20 @@ public class CarControl : MonoBehaviour
             {
                 wheels[i].motorTorque = verticalInput * Mathf.Abs(totalPower / 2);
             }
+            for (int i = 0; i < wheels.Length; i++)
+            {
+                wheels[i].brakeTorque = brakePower;
+            }
         }
         else
         {
             for (int i = 0; i < wheels.Length - 2; i++)
             {
                 wheels[i].motorTorque = verticalInput * Mathf.Abs(totalPower / 2);
+            }
+            for (int i = 0; i < wheels.Length; i++)
+            {
+                wheels[i].brakeTorque = brakePower;
             }
         }
 
@@ -198,13 +235,26 @@ public class CarControl : MonoBehaviour
             carRB.AddForce(Vector3.forward * thrust);
         }
 
-        speedKmh = carRB.velocity.magnitude * MPH_TO_KMH;
+        speedKmh = (carRB.velocity.magnitude * MPH_TO_KMH);
+    }
+    private void ClampSpeeds()
+    {
+        if(speedKmh > maxSpeeds[currentGear])
+        {
+            speedKmh = maxSpeeds[currentGear];
+        }
+        if(engineRPM > maxRPM)
+        {
+            engineRPM = maxRPM;
+        }
+        
     }
 
+    //public float turningRadius = 40f;
     private void SteerVehicle()
     {
-        float wheelbase = 2.55f; // Length between front and rear axles
-        float trackWidth = 1.5f; // Distance between left and right wheels
+        float wheelbase = 3.6f; // Length between front and rear axles
+        float trackWidth = 2f; // Distance between left and right wheels
 
         if (Mathf.Abs(horizontalInput) > 0.01f) // Prevent division by zero for very small input
         {
@@ -244,7 +294,7 @@ public class CarControl : MonoBehaviour
     private float driftFactor;
     private void AdjustTraction()
     {
-        float driftSmoothFactor = 0.7f * Time.deltaTime;
+        float driftSmoothFactor = 0.7f * Time.deltaTime ;
 
         if (handbrakeInput)
         {

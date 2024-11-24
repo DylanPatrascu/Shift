@@ -17,6 +17,7 @@ public class MusicController : MonoBehaviour
     public CarControl car;
     private void Awake()
     {
+        //LoadAllSongs();
         LoadSong(currentSong);
         CheckGear();
     }
@@ -24,7 +25,41 @@ public class MusicController : MonoBehaviour
     private void Update()
     {
         CheckGear();
+        if (!track0Source.isPlaying)
+        {
+            NextSong();
+        }
+        SkipSong();
+        
     }
+
+    /*
+    public void LoadAllSongs()
+    {
+        for (int i = 0; i < songs.Length; i++)
+        {
+            track0Source.clip = songs[i].track0;
+            track1Source.clip = songs[i].track1;
+            track2Source.clip = songs[i].track2;
+            track3Source.clip = songs[i].track3;
+            track4Source.clip = songs[i].track4;
+            track5Source.clip = songs[i].track5;
+        }
+    }*/
+    public void NextSong()
+    {
+        currentSong = Random.Range(0, songs.Length);
+        LoadSong(currentSong);
+    }
+
+    public void SkipSong()
+    {
+        if(Input.GetKeyDown(KeyCode.Period))
+        {
+            NextSong();
+        }
+    }
+
 
     public void LoadSong(int nextSong)
     {
@@ -46,20 +81,56 @@ public class MusicController : MonoBehaviour
     public void CheckGear()
     {
         AudioSource[] tracks = { track0Source, track1Source, track2Source, track3Source, track4Source, track5Source };
+        float fadeLength = 1.25f;
         for (int i = 0; i < tracks.Length; i++)
         {
-            if(car.currentGear <= 0)
+            if (car.currentGear <= 0)
             {
-                tracks[0].mute = false;
-                if(i != 0)
+                if (i == 0)
                 {
-                    tracks[i].mute = true;
+                    StartCoroutine(FadeIn(tracks[i], tracks[i].volume, 1f, fadeLength));
+                }
+                else
+                {
+                    tracks[i].volume = 0;
                 }
             }
             else
             {
-                tracks[i].mute = i > car.currentGear;
+                if (i <= car.currentGear)
+                {
+                    StartCoroutine(FadeIn(tracks[i], tracks[i].volume, 1f, fadeLength));
+                }
+                else
+                {
+                    StartCoroutine(FadeOut(tracks[i], tracks[i].volume, 0f, fadeLength));
+                }
             }
         }
     }
+
+    private IEnumerator FadeIn(AudioSource track, float startVolume, float targetVolume, float duration = 0.5f)
+    {
+        float time = 0f;
+        while (time < duration)
+        {
+            track.volume = Mathf.Lerp(startVolume, targetVolume, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        track.volume = targetVolume; 
+    }
+
+    private IEnumerator FadeOut(AudioSource track, float startVolume, float targetVolume, float duration = 0.5f)
+    {
+        float time = 0f;
+        while (time < duration)
+        {
+            track.volume = Mathf.Lerp(startVolume, targetVolume, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        track.volume = targetVolume;
+    }
+
 }

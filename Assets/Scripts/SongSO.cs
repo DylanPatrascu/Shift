@@ -8,7 +8,7 @@ public class SongSO : ScriptableObject
     public string songName;
     public string artist;
     public int songLength;
-    public Image albumCover;
+    public Sprite albumCover;
     public AudioClip track0;
     public AudioClip track1;
     public AudioClip track2;

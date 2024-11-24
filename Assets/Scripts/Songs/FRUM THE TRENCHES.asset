@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb9803dc6965ee43b55d8c856bf329e, type: 3}
+  m_Name: FRUM THE TRENCHES
+  m_EditorClassIdentifier: 
+  songName: FRUM THE TRENCHES
+  artist: DJmegan23
+  songLength: 157
+  albumCover: {fileID: 21300000, guid: 8ddeb535f0c15ce4097415b7c64fafdd, type: 3}
+  track0: {fileID: 8300000, guid: db78c42f8c0c4a94294441cd6c8dce27, type: 3}
+  track1: {fileID: 8300000, guid: 4b598ae28209b7048bbf5ae9f57454cc, type: 3}
+  track2: {fileID: 8300000, guid: 635677f9954ff47459ee2622f6140581, type: 3}
+  track3: {fileID: 8300000, guid: 594a66a03fd4039429dda2c879e2c819, type: 3}
+  track4: {fileID: 0}
+  track5: {fileID: 0}
