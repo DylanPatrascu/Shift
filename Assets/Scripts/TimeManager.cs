@@ -19,7 +19,8 @@ public class TimeManager : MonoBehaviour
     {
         slowmo = true;
         objectSpeeds.slowmoTimeScale = 0.5f;
-        player.slowmoTimeScale = 0.75f;
+        Time.timeScale = 0.75f;
+        //player.slowmoTimeScale = 0.5f;
         StartCoroutine(ExitSlowMoAfterDuration());
     }
 
@@ -32,7 +33,8 @@ public class TimeManager : MonoBehaviour
     private void ExitSlowMo()
     {
         objectSpeeds.slowmoTimeScale = 1f;
-        player.slowmoTimeScale = 1f;
+        //player.slowmoTimeScale = 1f;
+        Time.timeScale = 1f;
 
         slowmo = false;
     }

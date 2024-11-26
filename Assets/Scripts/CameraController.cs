@@ -4,8 +4,8 @@ using Cinemachine;
 public class CameraController : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private GameObject player; // Assign the player GameObject in the Inspector
-    [SerializeField] private CinemachineVirtualCamera virtualCamera; // Assign your Cinemachine virtual camera
+    [SerializeField] private GameObject player;
+    [SerializeField] private CinemachineVirtualCamera virtualCamera;
 
     private CarControl car;
     private Rigidbody carRB;
@@ -14,53 +14,46 @@ public class CameraController : MonoBehaviour
     [Range(0, 2)] public float smoothTime;
 
     [Header("FOV Settings")]
-    [SerializeField] private float minFOV = 60f; // Minimum FOV
-    [SerializeField] private float maxFOV = 120f; // Maximum FOV
-    [SerializeField] private float maxSpeed = 300f; // Speed at which FOV reaches maxFOV (CHANGE TO 250)
-    [SerializeField] private float boostFOV = 30f; // FOV increase when boosting
-    [SerializeField] private float boostSpeed = 5f; // Speed of FOV change when boosting
+    [SerializeField] private float minFOV = 60f;
+    [SerializeField] private float maxFOV = 120f;
+    [SerializeField] private float maxSpeed = 300f;
+    [SerializeField] private float boostFOVIncrease = 30f; 
+    [SerializeField] private float fovTransitionSpeed = 5f; 
 
     private float targetFOV;
 
     private void Awake()
     {
         car = player.GetComponent<CarControl>();
-        carRB = player.GetComponent<Rigidbody>(); // Assuming the car has a Rigidbody
+        carRB = player.GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
-
         AdjustFOV();
-        BoostingFOV();
+        ApplyFOV();
     }
 
     private void AdjustFOV()
     {
         if (carRB != null && virtualCamera != null)
         {
-            // Calculate current speed in km/h
             float speedKmh = carRB.velocity.magnitude * MPH_TO_KMH;
 
-            // Interpolate FOV based on speed
             targetFOV = Mathf.Lerp(minFOV, maxFOV, speedKmh / maxSpeed);
+
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                targetFOV += boostFOVIncrease;
+            }
         }
     }
 
-    private void BoostingFOV()
+    private void ApplyFOV()
     {
-        // If boost (Ctrl) is held down, smoothly transition to boosted FOV
-        if (Input.GetKey(KeyCode.LeftControl))
+        if (virtualCamera != null)
         {
-            targetFOV = Mathf.Lerp(targetFOV, virtualCamera.m_Lens.FieldOfView + boostFOV, boostSpeed * Time.deltaTime);
+            virtualCamera.m_Lens.FieldOfView = Mathf.Lerp(virtualCamera.m_Lens.FieldOfView, targetFOV, fovTransitionSpeed * Time.deltaTime);
         }
-        else
-        {
-            // Smoothly return to the normal FOV
-            targetFOV = Mathf.Lerp(targetFOV, Mathf.Lerp(minFOV, maxFOV, carRB.velocity.magnitude * MPH_TO_KMH / maxSpeed), smoothTime * Time.deltaTime);
-        }
-
-        // Set the virtual camera's FOV with smooth transition
-        virtualCamera.m_Lens.FieldOfView = targetFOV;
     }
 }

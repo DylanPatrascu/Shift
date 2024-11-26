@@ -15,17 +15,19 @@ public class CarControl : MonoBehaviour
         allWheelDrive
     }
 
+    internal enum CarType
+    {
+        manual,
+        automatic
+    }
 
     public WheelCollider[] wheels = new WheelCollider[4];
     public GameObject[] wheelMesh = new GameObject[4];
     public GameObject centerOfMass;
     public float wheelRadius = 0.47f;
-    public int motorTorque = 2000;
-    public int brakeTorque = 90000; 
-    public float steeringMax = 40f;
+    public float steeringMax;
     private Rigidbody carRB;
     public float speedKmh;
-    public float maxSpeedKmh = 260f;
 
     public float downForceValue = 50f;
 
@@ -41,13 +43,13 @@ public class CarControl : MonoBehaviour
 
     public float engineRPM;
     public float maxRPM = 9000f;
-    public float smoothTime = 0.01f;
     public float[] gears;
     public int currentGear = 0;
 
     public bool reverse = false;
 
     [SerializeField] private DriveType driveMode;
+    [SerializeField] private CarType carMode;
 
     private WheelFrictionCurve forwardFriction;
     private WheelFrictionCurve sidewaysFriction;
@@ -55,7 +57,10 @@ public class CarControl : MonoBehaviour
     public float handBrakeFriction = 0f;
     public float brakePower = 0;
     public float slowmoTimeScale = 1f;
-    public float[] maxSpeeds = { 57.14f, 100.00f, 142.86f, 190.71f, 237.86f, 300.00f };
+    public TrailRenderer[] skidMarks = new TrailRenderer[2];
+    public ParticleSystem[] skidSmokes = new ParticleSystem[2];
+    private float driftFactor;
+
 
 
     private void Start()
@@ -72,13 +77,16 @@ public class CarControl : MonoBehaviour
         ApplyDownForce();
         CalculateEnginePower();
         AdjustTraction();
-        Debug.Log("WheelRPM: " + wheelsRPM + "||| Engine RPM:" + engineRPM + "|||| Speed:" + speedKmh);
-        ClampSpeeds();
+        //Debug.Log("WheelRPM: " + wheelsRPM + "||| Engine RPM:" + engineRPM + "|||| Speed:" + speedKmh);
     }
 
     private void Update()
     {
         GearShift();
+        if(Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            Debug.Log("SLOWMO");
+        } 
 
     }
 
@@ -99,7 +107,30 @@ public class CarControl : MonoBehaviour
 
     }
 
+    private void ToggleSkidMarks(bool toggle)
+    {
+        foreach (var skidMark in skidMarks)
+        {
+            skidMark.emitting = toggle;
+        }
 
+    }
+
+    private void ToggleSkidSmokes(bool toggle)
+    {
+        foreach (var skidSmoke in skidSmokes)
+        {
+            if (toggle)
+            {
+                skidSmoke.Play();
+            }
+            else
+            {
+                skidSmoke.Stop();
+            }
+        }
+
+    }
     private bool IsGrounded()
     {
         for(int i = 0; i < wheels.Length; i++)
@@ -115,21 +146,56 @@ public class CarControl : MonoBehaviour
     private void GearShift()
     {
         if (!IsGrounded()) return;
-        
-        if (Input.GetKeyDown(KeyCode.E) && currentGear < gears.Length - 1)
-        {
-            currentGear++;
-        }
-        else if ((Input.GetKeyDown(KeyCode.Q) && currentGear >= 1))
-        {
-            currentGear--;
-        }
 
+        int previousGear = currentGear;
+
+        //manual
+        if (carMode == CarType.manual)
+        {
+            if (Input.GetKeyDown(KeyCode.E) && currentGear < gears.Length - 1)
+            {
+                currentGear++;
+                reverse = false;
+            }
+            else if (Input.GetKeyDown(KeyCode.Q) && currentGear >= 0)
+            {
+                if(currentGear == 0)
+                {
+                    reverse = true;
+                }
+                else
+                {
+                    currentGear--;
+                }
+            }
+        }
+        //automatic
+        else
+        {
+            if (engineRPM >= maxRPM / gears[currentGear] && currentGear < gears.Length - 1)
+            {
+                currentGear++;
+            }
+            else if (engineRPM < maxRPM / (gears[currentGear] * 0.8f) && currentGear > 0)
+            {
+                currentGear--;
+            }
+        }
+        //gear down speed loss
+        if (currentGear < previousGear && speedKmh > 50f) 
+        {
+            float wheelSpeed = speedKmh / MPH_TO_KMH;
+            engineRPM = Mathf.Clamp(wheelSpeed * gears[currentGear] * 60f / (Mathf.PI * wheelRadius * 2f), 1000f, maxRPM);
+
+            float currentGearRatio = gears[currentGear];
+            float previousGearRatio = gears[previousGear];
+            float adjustmentFactor = previousGearRatio / currentGearRatio;
+            carRB.velocity *= adjustmentFactor;
+        }
     }
 
     private void CalculateEnginePower()
     {
-        // Update the wheels' RPM
         WheelRPM();
 
         if (verticalInput != 0)
@@ -140,17 +206,19 @@ public class CarControl : MonoBehaviour
         {
             carRB.drag = 0.1f;
         }
-        // Evaluate engine power from the curve using engine RPM
+
         float rawEnginePower = enginePower.Evaluate(engineRPM);
 
-        // Calculate total power with current gear and input
+        float maxRPMForGear = maxRPM / gears[currentGear];
+        engineRPM = Mathf.Clamp(engineRPM, 1000f, maxRPMForGear);
+
         totalPower = rawEnginePower * gears[currentGear] * verticalInput;
 
-        // Smoothly calculate engine RPM based on wheels RPM and gear ratio
         float velocity = 0.0f;
         float targetRPM = 1000 + (Mathf.Abs(wheelsRPM) * gears[currentGear] * MPH_TO_KMH);
-        engineRPM = Mathf.SmoothDamp(engineRPM, targetRPM, ref velocity, smoothTime);
+        engineRPM = Mathf.SmoothDamp(engineRPM, targetRPM, ref velocity, 0.01f);
     }
+
 
     private void WheelRPM()
     {
@@ -199,11 +267,16 @@ public class CarControl : MonoBehaviour
     {
         BrakeVehicle();
 
+        float appliedInput = reverse || verticalInput >= 0 ? verticalInput : 0;
+
+        float dragForce = 0.5f * carRB.velocity.magnitude * carRB.velocity.magnitude;
+        carRB.AddForce(-carRB.velocity.normalized * dragForce);
+
         if (driveMode == DriveType.allWheelDrive)
         {
             for (int i = 0; i < wheels.Length; i++)
             {
-                wheels[i].motorTorque = verticalInput * Mathf.Abs(totalPower / 4);
+                wheels[i].motorTorque = (appliedInput * Mathf.Abs(totalPower / 4)) * slowmoTimeScale;
                 wheels[i].brakeTorque = brakePower;
             }
         }
@@ -211,7 +284,7 @@ public class CarControl : MonoBehaviour
         {
             for (int i = 2; i < wheels.Length; i++)
             {
-                wheels[i].motorTorque = verticalInput * Mathf.Abs(totalPower / 2);
+                wheels[i].motorTorque = appliedInput * Mathf.Abs(totalPower / 2);
             }
             for (int i = 0; i < wheels.Length; i++)
             {
@@ -222,7 +295,7 @@ public class CarControl : MonoBehaviour
         {
             for (int i = 0; i < wheels.Length - 2; i++)
             {
-                wheels[i].motorTorque = verticalInput * Mathf.Abs(totalPower / 2);
+                wheels[i].motorTorque = appliedInput * Mathf.Abs(totalPower / 2);
             }
             for (int i = 0; i < wheels.Length; i++)
             {
@@ -230,60 +303,25 @@ public class CarControl : MonoBehaviour
             }
         }
 
-        if(boostInput)
+        if (boostInput)
         {
             carRB.AddForce(Vector3.forward * thrust);
         }
 
         speedKmh = (carRB.velocity.magnitude * MPH_TO_KMH);
     }
-    private void ClampSpeeds()
-    {
-        if(speedKmh > maxSpeeds[currentGear])
-        {
-            speedKmh = maxSpeeds[currentGear];
-        }
-        if(engineRPM > maxRPM)
-        {
-            engineRPM = maxRPM;
-        }
-        
-    }
 
-    //public float turningRadius = 40f;
+
     private void SteerVehicle()
     {
-        float wheelbase = 3.6f; // Length between front and rear axles
-        float trackWidth = 2f; // Distance between left and right wheels
-
-        if (Mathf.Abs(horizontalInput) > 0.01f) // Prevent division by zero for very small input
+        float steeringAngle =  steeringMax * horizontalInput;
+        for(int i = 0; i < wheels.Length / 2; i++)
         {
-            float turningRadius = Mathf.Abs(1 / horizontalInput); // Simplified radius
-
-            float innerAngle = Mathf.Rad2Deg * Mathf.Atan(wheelbase / (turningRadius + (trackWidth / 2)));
-            float outerAngle = Mathf.Rad2Deg * Mathf.Atan(wheelbase / (turningRadius - (trackWidth / 2)));
-
-            // Clamp angles to maximum steering angle
-            innerAngle = Mathf.Clamp(innerAngle, -steeringMax, steeringMax);
-            outerAngle = Mathf.Clamp(outerAngle, -steeringMax, steeringMax);
-
-            if (horizontalInput > 0) // Turning right
-            {
-                wheels[0].steerAngle = outerAngle; // Front-left wheel
-                wheels[1].steerAngle = innerAngle; // Front-right wheel
-            }
-            else if (horizontalInput < 0) // Turning left
-            {
-                wheels[0].steerAngle = -innerAngle; // Front-left wheel
-                wheels[1].steerAngle = -outerAngle; // Front-right wheel
-            }
-        }
-        else
-        {
-            wheels[0].steerAngle = 0;
-            wheels[1].steerAngle = 0;
-        }
+            wheels[i].steerAngle = steeringAngle;
+        }    
     }
+
+
 
     private void ApplyDownForce()
     {
@@ -291,7 +329,6 @@ public class CarControl : MonoBehaviour
     }
 
 
-    private float driftFactor;
     private void AdjustTraction()
     {
         float driftSmoothFactor = 0.7f * Time.deltaTime ;
@@ -318,6 +355,8 @@ public class CarControl : MonoBehaviour
                 wheels[i].forwardFriction = forwardFriction;
             }
             carRB.AddForce(transform.forward * (speedKmh / 400) * 10000);
+            ToggleSkidMarks(true);
+            //ToggleSkidSmokes(true);
         }
         else
         {
@@ -332,6 +371,8 @@ public class CarControl : MonoBehaviour
                 wheels[i].sidewaysFriction = sidewaysFriction;
 
             }
+            ToggleSkidMarks(false);
+            //ToggleSkidSmokes(false);
         }
 
         for (int i = 2; i < wheels.Length; i++)
