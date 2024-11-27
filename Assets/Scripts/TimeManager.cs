@@ -11,29 +11,23 @@ public class TimeManager : MonoBehaviour
     public CarControl player;
     public Transform posToSpawn;
     public float meshDestroyDelay = 3f;
+    public Material effectMaterial;
 
-    // HSV color cycling variables (using 0-255 hue range)
-    private float currentHue = 0f; // Current hue value (0 to 255)
-    public float saturation = 0.5f; // Saturation (0 to 1)
-    public float brightness = 0.5f; // Brightness (0 to 1)
+    private float currentHue = 0f; 
+    public float saturation = 0.5f; 
+    public float brightness = 0.5f; 
 
     private bool isInSlowMo = false;
     private float cycleSpeed;
 
     private void Start()
     {
-        // Cache all MeshRenderers
         if (meshRenderers == null || meshRenderers.Length == 0)
         {
             meshRenderers = GetComponentsInChildren<MeshRenderer>();
         }
 
-        // Set the initial sorting layer for the car (real car will always be on top)
-        foreach (var renderer in meshRenderers)
-        {
-            renderer.sortingLayerName = "RealCar";
-            renderer.sortingOrder = 1;
-        }
+        
     }
 
     private void Update()
@@ -49,12 +43,6 @@ public class TimeManager : MonoBehaviour
         Time.timeScale = 0.5f;
         player.steeringMax = 70f;
         currentHue = 165f;
-
-        foreach (var renderer in meshRenderers)
-        {
-            renderer.sortingLayerName = "RealCar";
-            renderer.sortingOrder = 1;
-        }
 
         cycleSpeed = 1f / slowDownLength; 
 
@@ -93,13 +81,14 @@ public class TimeManager : MonoBehaviour
                     trailFilter.mesh = Instantiate(meshFilter.sharedMesh);
 
                     Material[] originalMaterials = renderer.materials;
+                    for(int i = 0; i < originalMaterials.Length; i++)
+                    {
+                        originalMaterials[i] = effectMaterial;
+                    }
                     trailRenderer.materials = originalMaterials;
 
-                    trailRenderer.sortingLayerName = "Default"; 
-                    trailRenderer.sortingOrder = 0;
-
                     Color trailColor = GetCyclingColor();
-                    trailColor.a = 0.1f;
+                    trailColor.a = 0.5f;
 
                     for (int i = 0; i < trailRenderer.materials.Length; i++)
                     {

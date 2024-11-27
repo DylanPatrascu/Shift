@@ -79,7 +79,7 @@ public class CarControl : MonoBehaviour
         CalculateEnginePower();
         AdjustTraction();
         EngineSound();
-        Debug.Log("WheelRPM: " + wheelsRPM + "||| Engine RPM:" + engineRPM + "|||| Speed:" + speedKmh);
+        //Debug.Log("WheelRPM: " + wheelsRPM + "||| Engine RPM:" + engineRPM + "|||| Speed:" + speedKmh);
     }
 
     private void Update()

@@ -1,57 +1,53 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\Unity\\Shift\\",
+  "WorkspaceRootPath": "C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|F:\\Unity\\Shift\\assets\\scripts\\npccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\npccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|f:\\unity\\shift\\assets\\scripts\\waypointnavigator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\waypointnavigator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4493610C-61EC-3C6F-2C50-7E6018FF6E4B}|Assembly-CSharp-Editor.csproj|F:\\Unity\\Shift\\assets\\editor\\waypointeditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4493610C-61EC-3C6F-2C50-7E6018FF6E4B}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\waypointeditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|F:\\Unity\\Shift\\assets\\scripts\\waypoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\waypoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|F:\\Unity\\Shift\\assets\\scripts\\timemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\assets\\scripts\\timemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\timemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4493610C-61EC-3C6F-2C50-7E6018FF6E4B}|Assembly-CSharp-Editor.csproj|F:\\Unity\\Shift\\assets\\editor\\waypointmanagerwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4493610C-61EC-3C6F-2C50-7E6018FF6E4B}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\waypointmanagerwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|F:\\Unity\\Shift\\assets\\scripts\\songso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\songso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|F:\\Unity\\Shift\\assets\\scripts\\carcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\carcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|F:\\Unity\\Shift\\assets\\scripts\\uicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\uicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|F:\\Unity\\Shift\\assets\\scripts\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|F:\\Unity\\Shift\\assets\\scripts\\musiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\assets\\scripts\\musiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\musiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Dylan\\OneDrive\\Desktop\\MusicController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\assets\\scripts\\carcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\carcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\Unity\\Shift\\assets\\scripts\\tempscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\tempscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|c:\\users\\dylan\\documents\\computer science 4482\\shift\\assets\\scripts\\npccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\npccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\assets\\scripts\\waypointnavigator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\waypointnavigator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4493610C-61EC-3C6F-2C50-7E6018FF6E4B}|Assembly-CSharp-Editor.csproj|C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\assets\\editor\\waypointeditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4493610C-61EC-3C6F-2C50-7E6018FF6E4B}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\waypointeditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\assets\\scripts\\waypoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\waypoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4493610C-61EC-3C6F-2C50-7E6018FF6E4B}|Assembly-CSharp-Editor.csproj|C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\assets\\editor\\waypointmanagerwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4493610C-61EC-3C6F-2C50-7E6018FF6E4B}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\waypointmanagerwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\assets\\scripts\\songso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\songso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\assets\\scripts\\uicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\uicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\assets\\scripts\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A5D70D9-9A82-95B5-5C20-D83B02A55BEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\Unity\\Shift\\Assets\\Scripts\\TempScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -61,41 +57,27 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "NPCController.cs",
-              "DocumentMoniker": "F:\\Unity\\Shift\\Assets\\Scripts\\NPCController.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\NPCController.cs",
-              "ToolTip": "F:\\Unity\\Shift\\Assets\\Scripts\\NPCController.cs",
-              "RelativeToolTip": "Assets\\Scripts\\NPCController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T01:18:35.977Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "WaypointNavigator.cs",
-              "DocumentMoniker": "F:\\Unity\\Shift\\Assets\\Scripts\\WaypointNavigator.cs",
+              "DocumentMoniker": "C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\Assets\\Scripts\\WaypointNavigator.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\WaypointNavigator.cs",
-              "ToolTip": "F:\\Unity\\Shift\\Assets\\Scripts\\WaypointNavigator.cs",
+              "ToolTip": "C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\Assets\\Scripts\\WaypointNavigator.cs",
               "RelativeToolTip": "Assets\\Scripts\\WaypointNavigator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T01:09:47.307Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T01:09:47.307Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "WaypointEditor.cs",
-              "DocumentMoniker": "F:\\Unity\\Shift\\Assets\\Editor\\WaypointEditor.cs",
+              "DocumentMoniker": "C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\Assets\\Editor\\WaypointEditor.cs",
               "RelativeDocumentMoniker": "Assets\\Editor\\WaypointEditor.cs",
-              "ToolTip": "F:\\Unity\\Shift\\Assets\\Editor\\WaypointEditor.cs",
+              "ToolTip": "C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\Assets\\Editor\\WaypointEditor.cs",
               "RelativeToolTip": "Assets\\Editor\\WaypointEditor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -103,11 +85,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Waypoint.cs",
-              "DocumentMoniker": "F:\\Unity\\Shift\\Assets\\Scripts\\Waypoint.cs",
+              "DocumentMoniker": "C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\Assets\\Scripts\\Waypoint.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Waypoint.cs",
-              "ToolTip": "F:\\Unity\\Shift\\Assets\\Scripts\\Waypoint.cs",
+              "ToolTip": "C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\Assets\\Scripts\\Waypoint.cs",
               "RelativeToolTip": "Assets\\Scripts\\Waypoint.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -115,11 +97,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "WaypointManagerWindow.cs",
-              "DocumentMoniker": "F:\\Unity\\Shift\\Assets\\Editor\\WaypointManagerWindow.cs",
+              "DocumentMoniker": "C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\Assets\\Editor\\WaypointManagerWindow.cs",
               "RelativeDocumentMoniker": "Assets\\Editor\\WaypointManagerWindow.cs",
-              "ToolTip": "F:\\Unity\\Shift\\Assets\\Editor\\WaypointManagerWindow.cs",
+              "ToolTip": "C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\Assets\\Editor\\WaypointManagerWindow.cs",
               "RelativeToolTip": "Assets\\Editor\\WaypointManagerWindow.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAAiwHkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -128,44 +110,33 @@
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "MusicController.cs",
-              "DocumentMoniker": "C:\\Users\\Dylan\\OneDrive\\Desktop\\MusicController.cs",
-              "ToolTip": "C:\\Users\\Dylan\\OneDrive\\Desktop\\MusicController.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAlwEYAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T04:56:04.505Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
               "Title": "TempScript.cs",
               "DocumentMoniker": "F:\\Unity\\Shift\\Assets\\Scripts\\TempScript.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\TempScript.cs",
               "ToolTip": "F:\\Unity\\Shift\\Assets\\Scripts\\TempScript.cs",
-              "RelativeToolTip": "Assets\\Scripts\\TempScript.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-21T01:27:22.378Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "TimeManager.cs",
-              "DocumentMoniker": "F:\\Unity\\Shift\\Assets\\Scripts\\TimeManager.cs",
+              "DocumentMoniker": "C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\Assets\\Scripts\\TimeManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TimeManager.cs",
-              "ToolTip": "F:\\Unity\\Shift\\Assets\\Scripts\\TimeManager.cs",
+              "ToolTip": "C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\Assets\\Scripts\\TimeManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\TimeManager.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAcwFsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAowFUAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T01:21:59.954Z"
+              "WhenOpened": "2024-11-21T01:21:59.954Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "SongSO.cs",
-              "DocumentMoniker": "F:\\Unity\\Shift\\Assets\\Scripts\\SongSO.cs",
+              "DocumentMoniker": "C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\Assets\\Scripts\\SongSO.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SongSO.cs",
-              "ToolTip": "F:\\Unity\\Shift\\Assets\\Scripts\\SongSO.cs",
+              "ToolTip": "C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\Assets\\Scripts\\SongSO.cs",
               "RelativeToolTip": "Assets\\Scripts\\SongSO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -173,23 +144,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
               "Title": "MusicController.cs",
-              "DocumentMoniker": "F:\\Unity\\Shift\\Assets\\Scripts\\MusicController.cs",
+              "DocumentMoniker": "C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\Assets\\Scripts\\MusicController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MusicController.cs",
-              "ToolTip": "F:\\Unity\\Shift\\Assets\\Scripts\\MusicController.cs",
+              "ToolTip": "C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\Assets\\Scripts\\MusicController.cs",
               "RelativeToolTip": "Assets\\Scripts\\MusicController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAgwBMAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T21:08:34.61Z"
+              "WhenOpened": "2024-11-19T21:08:34.61Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "UIController.cs",
-              "DocumentMoniker": "F:\\Unity\\Shift\\Assets\\Scripts\\UIController.cs",
+              "DocumentMoniker": "C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\Assets\\Scripts\\UIController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UIController.cs",
-              "ToolTip": "F:\\Unity\\Shift\\Assets\\Scripts\\UIController.cs",
+              "ToolTip": "C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\Assets\\Scripts\\UIController.cs",
               "RelativeToolTip": "Assets\\Scripts\\UIController.cs",
               "ViewState": "AgIAADIAAAAAAAAAAAAIwEAAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -197,27 +169,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
+              "Title": "CarControl.cs",
+              "DocumentMoniker": "C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\Assets\\Scripts\\CarControl.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CarControl.cs",
+              "ToolTip": "C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\Assets\\Scripts\\CarControl.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CarControl.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAADgv1wAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T02:38:39.905Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NPCController.cs",
+              "DocumentMoniker": "C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\Assets\\Scripts\\NPCController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\NPCController.cs",
+              "ToolTip": "C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\Assets\\Scripts\\NPCController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\NPCController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T01:18:35.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "CameraController.cs",
-              "DocumentMoniker": "F:\\Unity\\Shift\\Assets\\Scripts\\CameraController.cs",
+              "DocumentMoniker": "C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\Assets\\Scripts\\CameraController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CameraController.cs",
-              "ToolTip": "F:\\Unity\\Shift\\Assets\\Scripts\\CameraController.cs",
+              "ToolTip": "C:\\Users\\dylan\\Documents\\Computer Science 4482\\Shift\\Assets\\Scripts\\CameraController.cs",
               "RelativeToolTip": "Assets\\Scripts\\CameraController.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAwDcAAABnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-16T07:10:11.188Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CarControl.cs",
-              "DocumentMoniker": "F:\\Unity\\Shift\\Assets\\Scripts\\CarControl.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\CarControl.cs",
-              "ToolTip": "F:\\Unity\\Shift\\Assets\\Scripts\\CarControl.cs",
-              "RelativeToolTip": "Assets\\Scripts\\CarControl.cs",
-              "ViewState": "AgIAACQBAAAAAAAAAAAawDEBAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T02:38:39.905Z"
             }
           ]
         }

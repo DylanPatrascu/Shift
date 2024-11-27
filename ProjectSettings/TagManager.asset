@@ -41,6 +41,3 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: RealCar
-    uniqueID: 3328576307
-    locked: 0

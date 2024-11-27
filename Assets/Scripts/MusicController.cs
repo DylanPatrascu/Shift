@@ -17,7 +17,7 @@ public class MusicController : MonoBehaviour
     public CarControl car;
     private void Awake()
     {
-        //LoadAllSongs();
+        LoadAllSongs();
         LoadSong(currentSong);
         CheckGear();
     }
@@ -33,9 +33,15 @@ public class MusicController : MonoBehaviour
         
     }
 
-    /*
+    
     public void LoadAllSongs()
     {
+        track0Source.mute = true;
+        track1Source.mute = true;
+        track2Source.mute = true;
+        track3Source.mute = true;
+        track4Source.mute = true;
+        track5Source.mute = true;
         for (int i = 0; i < songs.Length; i++)
         {
             track0Source.clip = songs[i].track0;
@@ -44,8 +50,20 @@ public class MusicController : MonoBehaviour
             track3Source.clip = songs[i].track3;
             track4Source.clip = songs[i].track4;
             track5Source.clip = songs[i].track5;
+            track0Source.Play();
+            track1Source.Play();
+            track2Source.Play();
+            track3Source.Play();
+            track4Source.Play();
+            track5Source.Play();
         }
-    }*/
+        track0Source.mute = false;
+        track1Source.mute = false;
+        track2Source.mute = false;
+        track3Source.mute = false;
+        track4Source.mute = false;
+        track5Source.mute = false;
+    }
     public void NextSong()
     {
         currentSong = Random.Range(0, songs.Length);
@@ -63,19 +81,21 @@ public class MusicController : MonoBehaviour
 
     public void LoadSong(int nextSong)
     {
+        Debug.Log("Load songs");
         track0Source.clip = songs[nextSong].track0;
         track1Source.clip = songs[nextSong].track1;
         track2Source.clip = songs[nextSong].track2;
         track3Source.clip = songs[nextSong].track3;
         track4Source.clip = songs[nextSong].track4;
         track5Source.clip = songs[nextSong].track5;
+        Debug.Log("clips loaded");
         track0Source.Play();
         track1Source.Play();
         track2Source.Play();
         track3Source.Play();
         track4Source.Play();
         track5Source.Play();
-
+        Debug.Log("play tracks");
     }
 
     public void CheckGear()
