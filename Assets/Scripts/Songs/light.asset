@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb9803dc6965ee43b55d8c856bf329e, type: 3}
+  m_Name: light
+  m_EditorClassIdentifier: 
+  songName: light
+  artist: 2hollis
+  songLength: 165
+  albumCover: {fileID: 21300000, guid: 1e8b9b82130839244853e1c9e4618f6f, type: 3}
+  track0: {fileID: 8300000, guid: cfdbcde1aba2b8f48ae0e619de429117, type: 3}
+  track1: {fileID: 8300000, guid: 09f5414ed66a4a34bbd2626b0d1792e0, type: 3}
+  track2: {fileID: 8300000, guid: e267dd5e9a140d54f85bd0fc1a531f45, type: 3}
+  track3: {fileID: 8300000, guid: 6b245d7f9ead5bd4392583567cd62647, type: 3}
+  track4: {fileID: 0}
+  track5: {fileID: 0}

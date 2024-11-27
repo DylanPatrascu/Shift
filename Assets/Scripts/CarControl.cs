@@ -35,7 +35,7 @@ public class CarControl : MonoBehaviour
     private float horizontalInput;
     private bool handbrakeInput;
     private bool boostInput;
-    public float thrust = 1000f;
+    public float thrust = 3000f;
 
     public float totalPower;
     public AnimationCurve enginePower;
@@ -56,12 +56,13 @@ public class CarControl : MonoBehaviour
     public float handBrakeFrictionMultiplier = 1.7f;
     public float handBrakeFriction = 0f;
     public float brakePower = 0;
-    public float slowmoTimeScale = 1f;
     public TrailRenderer[] skidMarks = new TrailRenderer[2];
     public ParticleSystem[] skidSmokes = new ParticleSystem[2];
     private float driftFactor;
 
-
+    public AudioSource engineSound, skidSound, idleSound;
+    [RangeAttribute(0, 1)] public float minPitch = 1f;
+    [RangeAttribute(1, 5)] private float maxPitch = 5f;
 
     private void Start()
     {
@@ -77,16 +78,13 @@ public class CarControl : MonoBehaviour
         ApplyDownForce();
         CalculateEnginePower();
         AdjustTraction();
-        //Debug.Log("WheelRPM: " + wheelsRPM + "||| Engine RPM:" + engineRPM + "|||| Speed:" + speedKmh);
+        EngineSound();
+        Debug.Log("WheelRPM: " + wheelsRPM + "||| Engine RPM:" + engineRPM + "|||| Speed:" + speedKmh);
     }
 
     private void Update()
     {
         GearShift();
-        if(Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            Debug.Log("SLOWMO");
-        } 
 
     }
 
@@ -128,6 +126,35 @@ public class CarControl : MonoBehaviour
             {
                 skidSmoke.Stop();
             }
+        }
+
+    }
+
+    private void EngineSound()
+    {
+        if (carRB.velocity.magnitude == 0)
+        {
+            engineSound.mute = true;
+            idleSound.mute = false;
+        }
+        else
+        {
+            idleSound.mute = true;
+            engineSound.mute = false;
+            engineSound.pitch = Mathf.Lerp(minPitch, maxPitch, speedKmh / 300);
+
+        }
+    }
+
+    private void ToggleSkidSound(bool toggle)
+    {
+        if (skidSound.isPlaying == true && toggle == false)
+        {
+            skidSound.Stop();
+        }
+        else if (skidSound.isPlaying == false && toggle == true)
+        {
+            skidSound.Play();
         }
 
     }
@@ -276,7 +303,7 @@ public class CarControl : MonoBehaviour
         {
             for (int i = 0; i < wheels.Length; i++)
             {
-                wheels[i].motorTorque = (appliedInput * Mathf.Abs(totalPower / 4)) * slowmoTimeScale;
+                wheels[i].motorTorque = appliedInput * Mathf.Abs(totalPower / 4);
                 wheels[i].brakeTorque = brakePower;
             }
         }
@@ -335,6 +362,7 @@ public class CarControl : MonoBehaviour
 
         if (handbrakeInput)
         {
+            
             sidewaysFriction = wheels[0].sidewaysFriction;
             forwardFriction = wheels[0].forwardFriction;
 
@@ -356,6 +384,7 @@ public class CarControl : MonoBehaviour
             }
             carRB.AddForce(transform.forward * (speedKmh / 400) * 10000);
             ToggleSkidMarks(true);
+            ToggleSkidSound(true);
             //ToggleSkidSmokes(true);
         }
         else
@@ -372,6 +401,7 @@ public class CarControl : MonoBehaviour
 
             }
             ToggleSkidMarks(false);
+            ToggleSkidSound(false);
             //ToggleSkidSmokes(false);
         }
 
