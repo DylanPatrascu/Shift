@@ -7,7 +7,7 @@ public class TimeManager : MonoBehaviour
     public bool slowmo = false;
     public float meshRefreshRate = 0.1f;
     public MeshRenderer[] meshRenderers;
-    public NPCController objectSpeeds;
+    public GameObject trafficParent;
     public CarControl player;
     public Transform posToSpawn;
     public float meshDestroyDelay = 3f;
@@ -19,6 +19,7 @@ public class TimeManager : MonoBehaviour
 
     private bool isInSlowMo = false;
     private float cycleSpeed;
+
 
     private void Start()
     {
@@ -35,11 +36,24 @@ public class TimeManager : MonoBehaviour
         HandleSlowMoToggle();
     }
 
+   
+    private void SetNPCTimeScale(float timeScale)
+    {
+        // Get all NPCController components from the parent's children
+        NPCController[] npcControllers = trafficParent.GetComponentsInChildren<NPCController>();
+
+        // Iterate through each component and set its slowmoTimeScale
+        foreach (var npcController in npcControllers)
+        {
+            npcController.slowmoTimeScale = timeScale;
+        }
+    }
+
     public void SlowMo()
     {
         slowmo = true;
         isInSlowMo = true;
-        objectSpeeds.slowmoTimeScale = 0.25f;
+        SetNPCTimeScale(0.25f);
         Time.timeScale = 0.5f;
         player.steeringMax = 70f;
         currentHue = 165f;
@@ -118,7 +132,7 @@ public class TimeManager : MonoBehaviour
 
     private void ExitSlowMo()
     {
-        objectSpeeds.slowmoTimeScale = 1f;
+        SetNPCTimeScale(1f);
         player.steeringMax = 50f;
         Time.timeScale = 1f;
         isInSlowMo = false;

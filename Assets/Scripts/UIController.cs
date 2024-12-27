@@ -25,6 +25,12 @@ public class UIController : MonoBehaviour
     public TMP_Text songLength;
     public MusicController musicController;
 
+    public GameObject timeUI;
+    public GameObject lapUI;
+    public TMP_Text elapsedRaceTime;
+    public TMP_Text elapsedRaceLaps;
+
+    public RaceController raceController;
 
 
     private void FixedUpdate()
@@ -34,6 +40,8 @@ public class UIController : MonoBehaviour
         UpdateTachometerNeedle(); 
         UpdateGearText();
         UpdateSong();
+        UpdateTimer();
+        UpdateLap();
     }
 
     void Start()
@@ -41,6 +49,8 @@ public class UIController : MonoBehaviour
         SpeedometerNeedle.transform.localRotation = Quaternion.Euler(0, 0, speedStartPosition);
 
         TachometerNeedle.transform.localRotation = Quaternion.Euler(0, 0, tachStartPosition);
+        timeUI.SetActive(false);
+        lapUI.SetActive(false);
     }
 
     public void UpdateSpeedometerNeedle()
@@ -81,5 +91,19 @@ public class UIController : MonoBehaviour
 
         songLength.text = songLengthNiceTime;
         elapsedTime.text = elapsedTimeNiceTime;
+    }
+
+    public void UpdateTimer()
+    {
+        int elapsedTimeMinutes = Mathf.FloorToInt(raceController.timer / 60F);
+        int elapsedTimeSeconds = Mathf.FloorToInt(raceController.timer - elapsedTimeMinutes * 60);
+        string elapsedTime = string.Format("{0:0}:{1:00}", elapsedTimeMinutes, elapsedTimeSeconds);
+        elapsedRaceTime.text = elapsedTime;
+
+    }
+
+    public void UpdateLap()
+    {
+        elapsedRaceLaps.text = raceController.lapCounter.ToString();
     }
 }

@@ -15,6 +15,8 @@ public class MusicController : MonoBehaviour
     public AudioSource track4Source;
     public AudioSource track5Source;
     public CarControl car;
+
+    public bool paused = false;
     private void Awake()
     {
         LoadAllSongs();
@@ -25,7 +27,7 @@ public class MusicController : MonoBehaviour
     private void Update()
     {
         CheckGear();
-        if (!track0Source.isPlaying)
+        if (!track0Source.isPlaying && !paused)
         {
             NextSong();
         }
@@ -72,30 +74,46 @@ public class MusicController : MonoBehaviour
 
     public void SkipSong()
     {
-        if(Input.GetKeyDown(KeyCode.Period))
+        if(Input.GetKeyDown(KeyCode.F))
         {
             NextSong();
         }
     }
 
+    public void PauseMusic()
+    {
+        AudioSource[] tracks = { track0Source, track1Source, track2Source, track3Source, track4Source, track5Source };
+        for (int i = 0; i < tracks.Length; i++) {
+            tracks[i].Pause();
+        }
+        paused = true;
+    }
+
+    public void ResumeMusic()
+    {
+        AudioSource[] tracks = { track0Source, track1Source, track2Source, track3Source, track4Source, track5Source };
+        for (int i = 0; i < tracks.Length; i++)
+        {
+            tracks[i].UnPause();
+        }
+        paused = false;
+    }
+
 
     public void LoadSong(int nextSong)
     {
-        Debug.Log("Load songs");
         track0Source.clip = songs[nextSong].track0;
         track1Source.clip = songs[nextSong].track1;
         track2Source.clip = songs[nextSong].track2;
         track3Source.clip = songs[nextSong].track3;
         track4Source.clip = songs[nextSong].track4;
         track5Source.clip = songs[nextSong].track5;
-        Debug.Log("clips loaded");
         track0Source.Play();
         track1Source.Play();
         track2Source.Play();
         track3Source.Play();
         track4Source.Play();
         track5Source.Play();
-        Debug.Log("play tracks");
     }
 
     public void CheckGear()

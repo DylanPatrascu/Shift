@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditorInternal;
 using UnityEngine;
 
 public class CarControl : MonoBehaviour
@@ -60,7 +59,7 @@ public class CarControl : MonoBehaviour
     public ParticleSystem[] skidSmokes = new ParticleSystem[2];
     private float driftFactor;
 
-    public AudioSource engineSound, skidSound, idleSound;
+    public AudioSource engineSound, skidSound;
     [RangeAttribute(0, 1)] public float minPitch = 1f;
     [RangeAttribute(1, 5)] private float maxPitch = 5f;
 
@@ -132,19 +131,9 @@ public class CarControl : MonoBehaviour
 
     private void EngineSound()
     {
-        if (carRB.velocity.magnitude == 0)
-        {
-            engineSound.mute = true;
-            idleSound.mute = false;
-        }
-        else
-        {
-            idleSound.mute = true;
-            engineSound.mute = false;
-            engineSound.pitch = Mathf.Lerp(minPitch, maxPitch, speedKmh / 300);
-
-        }
+        engineSound.pitch = Mathf.Lerp(minPitch, maxPitch, speedKmh / 300);
     }
+
 
     private void ToggleSkidSound(bool toggle)
     {
@@ -156,7 +145,6 @@ public class CarControl : MonoBehaviour
         {
             skidSound.Play();
         }
-
     }
     private bool IsGrounded()
     {
