@@ -23,7 +23,7 @@ public class RaceController : MonoBehaviour
                 uiController.lapUI.SetActive(true);
 
             }
-            if(lapCounter == 4)
+            if(lapCounter == 2)
             {
                 endCanvas.SetActive(true);
                 int elapsedTimeMinutes = Mathf.FloorToInt(timer / 60F);

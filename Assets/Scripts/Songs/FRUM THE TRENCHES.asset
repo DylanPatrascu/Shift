@@ -15,7 +15,7 @@ MonoBehaviour:
   songName: FRUM THE TRENCHES
   artist: DJmegan23
   songLength: 157
-  albumCover: {fileID: 21300000, guid: 8ddeb535f0c15ce4097415b7c64fafdd, type: 3}
+  albumCover: {fileID: 21300000, guid: 2ea7ec8af8693cd459af6b29f47ae648, type: 3}
   track0: {fileID: 8300000, guid: db78c42f8c0c4a94294441cd6c8dce27, type: 3}
   track1: {fileID: 8300000, guid: 4b598ae28209b7048bbf5ae9f57454cc, type: 3}
   track2: {fileID: 8300000, guid: 635677f9954ff47459ee2622f6140581, type: 3}

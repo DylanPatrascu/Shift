@@ -4055,7 +4055,7 @@ MonoBehaviour:
   - {fileID: 5766016645766651011, guid: 495b0e0e733c1e04ab5c9baddfc5405e, type: 3}
   - {fileID: 5668441091995904930, guid: e889e3ab6ece7da4f81ad4aa0e0251d9, type: 3}
   - {fileID: 5779503885133283735, guid: 6c1093986bf9d9f49a39f5bd90a560ec, type: 3}
-  carsPerLane: 70
+  carsPerLane: 50
   carLanes:
   - {fileID: 1951980706}
   - {fileID: 1939881946}
@@ -62389,7 +62389,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -66533,13 +66533,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   songs:
-  - {fileID: 11400000, guid: 0453a50ea43596d4b92cb65eabd4d322, type: 2}
-  - {fileID: 11400000, guid: 3d26fe791e1bdb748a43acee46df8be3, type: 2}
-  - {fileID: 11400000, guid: 25f12d59f2fec7c41b9b8e1680df4362, type: 2}
-  - {fileID: 11400000, guid: 9f689ebb71fb4164d87751fc6f2b5d86, type: 2}
   - {fileID: 11400000, guid: 47ee6129299e0eb42b27864f2872b303, type: 2}
   - {fileID: 11400000, guid: b62896b860eeb724c8a59ea9b01a8b2e, type: 2}
   - {fileID: 11400000, guid: d37ed123c08ccf84da0cd53f391a9f61, type: 2}
+  - {fileID: 11400000, guid: 9f689ebb71fb4164d87751fc6f2b5d86, type: 2}
   currentSong: 0
   track0Source: {fileID: 1530246901}
   track1Source: {fileID: 1530246900}
@@ -67728,8 +67725,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17
-  m_fontSizeBase: 17
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -94700,7 +94697,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2093681327
 RectTransform:
   m_ObjectHideFlags: 0
